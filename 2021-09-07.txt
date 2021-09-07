@@ -1,17 +1,89 @@
 1. 반복문에서 while 문과 do while 문의 차이는?
+  while문에서는 조건문이 맨 처음 오지만 do while문에서는 조건문이 맨 마지막에 온다.
+
 2. for 문에서 for 문이 실행되는 순서를 설명하시오.
+  for (조건1; 조건2; 조건3) {
+    실행되는부분;
+    }
+    조건이 종료되면 나오는 부분
+   
+   조건1-조건2-실행부분-조건3-조건2-실행부분-조건3-......조건2-조건종료탈출
+
 3. 반복문에서의 break 와 continue 를 설명하시오.
+  
 
 4.아래를 프로그래밍 하시오.
 5.1부터 100 까지의 합
+public class Sum {
+  public static void main(String[] args) {
+    int sum = 0
+    for (int i = 1; i <= 100; i++) {
+      sum += i;
+    }
+    System.out.println(Sum);
+  }
+}
+
 6.1 부터 100까 사이의 홀수 의 합
+public class OddSum {
+  public static void main(String[] args) {
+    int sum = 0
+    for (int i = 1; i <= 100; i++) {
+      if ((i % 2) == 0) {
+        continue;
+      }
+      sum += i;
+    }
+    System.out.println(sum);
+  }
+}
+
 7.1 부터 100까 사이의 짝수 의 합
+public class EvenSum {
+  public static void main(String[] args) {
+    int sum = 0
+    for (int i = 1; i <= 100; i++) {
+      if ((i % 2) == 1) {
+        continue;
+      }
+      sum += i;
+    }
+    System.out.println(sum);
+  }
+}
 
 8.과 1000 사이의 숫자 중 3의 배수 이자 5의 배수인 첫 번째 수는?
+public class Class {
+  public static void main(String[] args) {
+    int num = 1;
+    boolean search;
+    
+    while (num < 1000) {
+      if (((num % 3) == 0) && ((num % 5) == 0)) {
+        search = true;
+        break;
+      }
+    num++;
+    }
+  if (search) {
+    System.out.println("찾는 정수 : " + num);
+  }
+}
 9.과 1000 사이의 숫자 중 2의 배수 이자 3의 배수인 수는 모두 몇 개인가?
+public class Class {
+  public static void main(String[] args) {
+    int num = 1;
+    int count = 0;
+    
+    while (num < 1000) {
+      if (((num % 2) == 0) && ((num % 3) == 0)) {
+        count++
+      }
+    System.out.println(count);
+  }
+}
 
 10.. 화폐 매수 구하기
-
 126500 의 금액을 한국 화폐로 바꾸었을 때 각각 몇 개의 화폐가 필요한지 계산해서 출력하기
 예) int 126500;
 오만원 : 2장	
@@ -25,17 +97,47 @@
 영희가 은행에 500원 (원금)을 입금했다. 하루에 1원씩 이자가 붙는다. 5일 후(일수) 잔액은 얼마가 되어 있을까?
 
 12.구구단을 찍으시오.
+public class Gugu {
+  public static void main(String[] args) {
+    
+  }
+}
+
 13.짝수단을 찍으시오.
+
 14.결과값이 홀수 인 값만 찍으시오.
+
 15,아래의 별을 찍으시오.
 *****
 *****
 *****
 *****
 *****
+
+public class Star {
+  public static void main(String[] args) {
+    for (int i = 1; i <= 5; i++) {
+      for (int j = 1; j <= 5; j++) {
+        System.out.println("*");
+      }
+    }
+  }
+}
+
+
 15,아래의 별을 찍으시오.
 *
 **
 ***
 ****
 *****
+
+public class Star {
+  public static void main(String[] args) {
+    for (int i = 1; i <= 5; i++) {
+      for (int j = 1; j <= i; j++) {
+        System.out.println("*");
+      }
+    }
+  }
+}
