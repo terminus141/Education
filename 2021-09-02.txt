@@ -1,0 +1,105 @@
+1. 상수란 무엇이며 변수와의 차이는?
+	상수는 변하지 않는 값을 의미한다.
+	변수는 한 번 정해진 값이 이후에 바뀔 수 있지만, 상수는 값을 한 번 정했다면 더 이상 바꿀 수 없다.
+
+2. 초기화란?
+	상수나 변수의 객체를 선언하고 값을 최초로 할당하는 것이다.
+
+3. 리터럴이란?
+	소스 코드 내에서 직접 입력된 값을 의미한다.
+	변하지 않는다는 점에서는 상수와 비슷하지만,
+	상수는 엄연히 따졌을 때 "변수"에 속하기에 상수와 리터럴은 다른것이다.
+
+4.아래의 내용이 에러가 나는 이유와 수정 방법은?
+
+java
+System.out.println(3147483647 + 3147483648); //에러남
+
+	
+
+5. 자동 형변환과 명시적 형변환에 대하여 설명하시오.
+	
+
+6.아래의 에러가 나는 이유를 설명하고 수정 하시오.
+
+int a = 3;
+int b = 4;
+	
+double result = a / b;
+
+System.out.println(result);
+
+
+	a / b 는 int 연산 방법이기에 값은 int 식으로 따져 0 이 나온다.
+	하지만 result는 double변수이기에 이 코드를 실행했을시 0.0으로 표기된다.
+	이것을 고치기 위해서는
+	double result = (double) a / b;
+	로 바꾸면 원래의 의도대로 0.75의 값이 출력된다.
+
+7. 이스케이프 시퀀스의 종류를 나열하고 기능을 설명하시오.
+	\b
+	\t
+	\n
+	\
+
+8. 아래의 출력 결과를 확인하고, 130이 나오는 이유를 설명
+
+System.out.println('A'); 
+System.out.println('A' + 'A'); 
+
+
+	
+
+9. 결합 방향과 우선순위에 대하여 설명하시오.
+	
+
+10. "2의 배수 또는 3의 배수?" 를 코딩으로 표현하시오.
+	
+
+11. && 와 || 설명하시오.
+	
+
+12. 아래를 프로그래밍을 하시오.
+
+-11 과 22 를 int로 선언후
+-11이  1 초과 100 미만인가 인 숫자인가를 true  false 로 출력
+-22가 2 또는 3의 배수인가를  true  false 로 출력
+
+
+public class Day03
+	public static void main(String[] args) {
+		int num1 = 11;
+		int num2 = 22;
+		boolean result;
+
+		result = (num1 > 1) && (num1 < 100);
+		System.out.println(result);
+
+		result = ((num2 % 2) == 0) || ((num2 % 3) == 0);
+		System.out.println(result);
+
+
+
+13. 아래와 같이 출력값이 나오는 이유를 설명하시오.
+
+public class Hello {
+	public static void main(String[] args) {
+		int ch = '1';
+		int num = 1;
+
+		System.out.println(ch);
+		System.out.println(num);
+	}
+}
+
+/*
+출력결과
+49
+1
+*/
+
+	
+
+14. ASKII(아스키코드)란?
+	
+
