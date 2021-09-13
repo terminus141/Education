@@ -65,25 +65,43 @@ public class SquareArea {
 6.성적표 구하는 프로그램을 만드시오.
 - Grade 클래스 
 - 국영수 인스턴스 변수(각각의 setter getter 함수)
--getToal ,getAvg()
+-getTotal ,getAvg()
 - 메인 메소드를 가진 다른 클래스에서 Grade 객체 
 객체를 생성한다는 것은 해당 클래스의 .class 파일을 메모리에 올린다는 것을 의미한다.
 
-----------------------------------------------------------------
+
 class Grade {
 	private int kor;
 	private int eng;
 	private int math;
+
+	public void grade(int kor, int eng, int math) {
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+	}
 	
+	public int getTotal() {
+		return kor + eng + math;
+	}
 	
+	public double getAvg() {
+		return (kor + eng + math) / 3.0;
+	}
 }
 
 public class GetGrade {
 	public static void main (String[] args) {
+		Grade me = new Grade();
 		
+		me.grade(80, 90, 60);
+		
+		System.out.println(me.getTotal());
+		System.out.println(me.getAvg());
 	}
 }
----------------------------------------------------------------
+
+
 7. 객체란 무엇인가?
 
 8. 아래의 클래스에 대하여, 메모리 그림을 그리시오.
@@ -126,6 +144,30 @@ public int getArea() {
 4) getsum객체의 sum함수를 이용해 1부터 50(num)까지의 값을 구함
 
 
+class GetSum {
+	private int num;
+	
+	public void setNum(int num) {
+		this.num = num;
+	}
+	
+	public int sum() {
+		int sum = 0;
+		for (int i = 1; i <= num; i++) {
+			sum += i;
+		}
+		return sum;
+}
+
+public class Sum {
+	public static void main(String[] args) {
+		GetSum getsum = new GetSum();
+		
+		getsum.setNum(50);
+		System.out.println(getsum.sum());
+	}
+}
+
 
 11. 아래의 클래스를 작성하시오.
 
@@ -142,6 +184,10 @@ strPrint.printReverseTriangle(3);
 ***
 **
 *
+
+
+
+
 
 12. 아래의 프로그래밍을 작성하시오.
 
