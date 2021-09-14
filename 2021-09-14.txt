@@ -19,7 +19,7 @@
 
 
 
-5. 1. 아래와 같이 성적을 연속적으로 입력 받고 평균을 내는  프로그램을 작성하시오.
+5. 아래와 같이 성적을 연속적으로 입력 받고 평균을 내는  프로그램을 작성하시오.
 
 국어 영어 수학을 입력하세요!
 100 60 70
@@ -33,7 +33,63 @@ y
 n
 프로그램 종료 입니다.
 
-2. 아래의 프로그램을 작성하시오.
+
+import java.util.Scanner;
+
+class Grade {
+	
+	private int kor;
+	private int eng;
+	private int math;
+	
+	public void getGrade(int kor, int eng, int math) {
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+	}
+	
+	public double getAverage() {
+		return (kor + eng + math) / 3.0;
+	}
+	
+}
+
+public class AverageProgram {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		
+		while (true) {
+
+			Grade grade = new Grade();
+			
+			System.out.println("국어 영어 수학을 입력하세요!");
+
+			grade.getGrade(sc.nextInt(), sc.nextInt(), sc.nextInt());
+
+			System.out.println("평균은 " + grade.getAverage());
+
+			System.out.println("계속 하시겠습니까");
+
+			String answer = sc.next();
+			
+			if ((answer.equals("Y") || answer.equals("y"))) {
+				continue;
+			} else {
+				System.out.println("프로그램 종료입니다.");
+				sc.close();
+				break;
+			}
+			
+		}
+
+	}
+
+}
+
+
+6. 아래의 프로그램을 작성하시오.
 
 화폐 매수 구하기, 반드시 클래스로 작성할 것, 출력
 136000
@@ -54,7 +110,73 @@ y
 백원 : 0개
 계속 하시겠습니까
 
-3.아래의 프로그램을 작성 하시오.
+
+import java.util.Scanner;
+
+class Count {
+	
+	private int money;
+	private int om;
+	private int m;
+	private int oc;
+	private int c;
+	private int ob;
+	private int b;
+	
+	public void setMoney(int money) {
+		this.money = money;
+	}
+	
+	public void countMoney() {
+		om = money / 50000;
+		m = (money % 50000) / 10000;
+		oc = (money % 10000) / 5000;
+		c = (money % 5000) / 1000;
+		ob = (money % 1000) / 500;
+		b = (money % 500) / 100;
+		
+		System.out.println("오만원 : " + om + "장");
+		System.out.println("만원 : " + m + "장");
+		System.out.println("오천원 : " + oc + "장");
+		System.out.println("천원 : " + c + "장");
+		System.out.println("오백원 : " + ob + "개");
+		System.out.println("백원 : " + b + "개");
+	}
+	
+}
+
+public class MoneyCounter {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		Count count = new Count();
+		
+		while (true) {
+			
+			count.setMoney(sc.nextInt());
+			
+			count.countMoney();
+			
+			System.out.println("계속 하시겠습니까");
+			
+			String answer = sc.next();
+			
+			if (answer.equals("N") || answer.equals("n")) {
+				sc.close();
+				System.out.println("프로그램 종료");
+				break;
+			}
+			
+		}
+		
+	}
+	
+}
+
+
+
+7.아래의 프로그램을 작성 하시오.
 
 다음 멤버를 가지고 직사각형을 표현하는 Rectangle 클래스를 작성하라.
 
@@ -86,7 +208,7 @@ y
 
 
 
-1부터 n번째까지의 11의 배수 이거나 14의 배수의 갯수
+8. 1부터 n번째까지의 11의 배수 이거나 14의 배수의 갯수
 아래의 Multiplse 클래스를 완성하시오.
 
 메인 메소드 안에 //처음 클래스 명은 아무거나 해도 됩니다.
@@ -97,6 +219,6 @@ y
   system.out.println();
   
 출력은 1에서 10000까지의 숫자 중 12의 배수이거나 14의 배수의 갯수는 몇개입니다.
-setNum 에 100을 넣엇을경우
+setNum 에 1000을 넣엇을경우
 1에서 1000까지의 숫자 중 12의 배수이거나 14의 배수의 갯수는 몇개 입니다.
 
