@@ -1,14 +1,20 @@
 1. 메소드 오버로딩이란? 
-
+   똑같은 이름의 메소드를 중복해서 작성하는 것이다. 해당 메소드가 갖는 매개변수의 갯수나 타입을 다르게 하여서 생성할 수 있다.
+   
 2. 생성자 오버로딩이란?
+   메소드 오버로딩과 개념은 똑같다. 해당 생성자가 갖게되는 매개변수의 타입이나 갯수를 다르게 적용하여 특정상황에 따라서 사용할 수 있게끔 만들 수 있다.
 
 3. 메소드 오버로딩을 적용한 대표적인 함수는?
+   println()
 
 4. this의 용도는?
+   
 
 5. this 함수에 대하여 설명하시오.
+   
 
 6. 스트링 객체를 생성하는 2가지 방법은?
+   
 
 7. 아래의 결과를 예측하고,이유를 설명하시오.
 
@@ -34,9 +40,87 @@ else
 
 
 8. imutable 에 대하여 설명하시오.
+   
 
 9. 사용자로부터 받은 문자열(영문으로)에서 자음과 모음 개수를 계산하는 프로그램을 작성하라.
 (연속적이로 종료하시겠습니까 y 할때 까지 계속)
+
+
+import java.util.Scanner;
+
+class WordCount {
+
+	private String word;
+	private int vowel;
+	private int consonant;
+	
+	Scanner sc = new Scanner(System.in);
+
+	private void setUp() {
+		System.out.println("영어 단어를 입력하세요.");
+		word = sc.next();
+		
+		vowel = 0;
+		consonant = 0;
+	}
+
+	private void count() {
+		for (int i = 0; i < word.length(); i++) {
+			char ch = word.charAt(i);
+
+			switch (ch) {
+
+			case 'a':
+			case 'e':
+			case 'i':
+			case 'o':
+			case 'u':
+			case 'A':
+			case 'E':
+			case 'I':
+			case 'O':
+			case 'U':
+				vowel++;
+				break;
+			default:
+				consonant++;
+			}
+		}
+	}
+
+	private void showResult() {
+		System.out.println("알파벳 갯수 : " + word.length() + "개");
+		System.out.println("모음의 갯수 : " + vowel + "개");
+		System.out.println("자음의 갯수 : " + consonant + "개");
+	}
+
+	public void run() {
+		while (true) {
+			setUp();
+			count();
+			showResult();
+			
+			System.out.println("종료하시겠습니까 y/n");
+			String ans = sc.next();
+			
+			if (ans.equals("y") || ans.equals("Y")) {
+				System.out.println("프로그램 종료");
+				sc.close();
+				break;
+			} else {
+				continue;
+			}
+		}
+	}
+}
+
+public class Word {
+
+	public static void main(String[] args) {
+		WordCount woco = new WordCount();
+		woco.run();
+	}
+}
 
 
 
@@ -44,6 +128,45 @@ else
 
 입력:abcde
 출력:edcba
+
+
+import java.util.Scanner;
+
+class PrintWordReverse {
+	
+	Scanner sc = new Scanner(System.in);
+	
+	private String word;
+	
+	private void setUp() {
+		System.out.print("입력:");
+		word = sc.next();
+	}
+	
+	private void printReverse() {
+		for (int i = 0; i < 1; i++) {
+			System.out.print("출력:");
+			for (int j = (word.length()-1); j >= 0; j--) {
+				System.out.print(word.charAt(j));
+			}
+		}
+	}
+	
+	public void run() {
+		setUp();
+		printReverse();
+		sc.close();
+	}
+}
+
+public class PrintWord {
+
+	public static void main(String[] args) {
+		PrintWordReverse pwr = new PrintWordReverse();
+		pwr.run();
+	}
+}
+
 
 
 
