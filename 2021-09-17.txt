@@ -154,31 +154,27 @@ public class Random {
 값을 출력하는 프로그램을 작성하시오.
 
 
-public class Test01 {
-	public static void main(String args[]) {
-		Min min = new Min();
-		int[] arr = new int[5];
+public class RandomInt {
+	public static void main(String[] args) {
 		
-		System.out.println("min: " + min.minSearch(arr));
+		int[] arr = new int[10];
+		int min;
+		int max;
 		
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = (int)(Math.random() * 100 + 2);
+		}
 		
-	}
-}
-
-public class Min {
-	
-	public int minSearch(int[] arr) {
-		for(int i=0; i<arr.length; i++) arr[i] = (int)(Math.random()*45 + 1);
+		min = arr[0];
 		
-		for(int i : arr) System.out.print(i + " ");
-		System.out.println();
+		for (int i = 1; i < arr.length; i++) {
+			if (min > arr[i]) {
+				min = arr[i];
+			}
+		}
 		
-		int min = arr[0];
-		for(int i=0; i<arr.length; i++) if(min > arr[i]) min = arr[i];
-		
-		return min;
-	}
-	
+		System.out.println(min);
+	}	
 }
 
 
